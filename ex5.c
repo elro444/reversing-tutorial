@@ -11,7 +11,8 @@ int check(const char *s) {
 int main() {
     char input[100];
     printf("Enter key: ");
-    fgets(input, 100, stdout);
+    fgets(input, 100, stdin);
+    input[strcspn(input, "\n")] = '\0';
 
     if (check(input)) {
         printf("Nice!\n");

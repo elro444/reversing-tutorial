@@ -6,7 +6,8 @@ int main() {
     char key[] = { 97, 112, 112, 108, 101, 0 }; // "apple"
 
     printf("Enter password: ");
-    fgets(input, 100, stdout);
+    fgets(input, 100, stdin);
+    input[strcspn(input, "\n")] = '\0';
 
     if (strcmp(input, key) == 0) {
         printf("Welcome!\n");

@@ -6,7 +6,8 @@ int main() {
     char secret[] = { 'd' ^ 5, 'o' ^ 5, 'g' ^ 5, 0 }; // "dog" encoded
 
     printf("Password: ");
-    fgets(input, 100, stdout);
+    fgets(input, 100, stdin);
+    input[strcspn(input, "\n")] = '\0';
 
     for (int i = 0; input[i]; i++) {
         input[i] ^= 5;
